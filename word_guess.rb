@@ -27,14 +27,36 @@
 #If true:
 #Print "Got it right!"
 #Print mystery word with correct guessed letter inserted.
+# variable current guess. When == mystery, they win!
 #Loop back to Guess.
 
 #Else/if false, print "Wrong!" and remove one section of ASCII art.
 #Print "Try again!"
-#Loop back to Guess. 
+#Loop back to Guess.
+# a method that will print an updated image to the string. that informs of the amount left
+# store the art in an array which will be indexed [0].....ect
+# syntax: print pie array with index[1]
+# a method
 
+#Reprint the ASCII image, the guessed letters the status of the mystery word
+# (create a method)
 
+#When word mystery word is complete
+# puts the correct word
+# print ASCII art
+# puts "you won!"
+# exit
+
+#When ASCII art is gone!
+# puts "you lost"
+# exit
 
 
 class WordGuess
+
+puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, you will lose a piece of pie."
+puts "You must guess the correct word before you run out of pie."
+
+
+
 end
