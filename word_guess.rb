@@ -31,8 +31,28 @@
 
 #Else/if false, print "Wrong!" and remove one section of ASCII art.
 #Print "Try again!"
-#Loop back to Guess. 
+#Loop back to Guess.
 
+def froggy
+
+
+     @ . . @
+    (-------)
+  (   >___<   )
+  ^^  ~   ~   ^^
+  \\\\\\\///////
+
+  @ . . @
+ (-------)
+(   >___<   )
+^^  ~   ~   ^^
+\\\\\\\///////
+
+    @ . . @
+   (-------)
+  (   >___<   )
+ ^^  ~   ~   ^^
+ \\\\\\\///////
 
 
 
