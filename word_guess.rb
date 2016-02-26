@@ -17,8 +17,11 @@
 # Use Ruby class objects to contain your game logic. You may be able to implement your solution using just one class, but consider how isolating related functionality into separate classes may increase your code's readability and maintainability.
 
 #Create an array of possible words for the player to guess. Use sample to get one word from array.
-
-#Print ASCII art and mystery word.
+# mystery_words = %w(get red kitty nose)
+#
+# #Print ASCII art and mystery word.
+# puts frogarray[0]
+# puts mystery_words.sample
 
 #Ask player to guess a letter.
 #Capture the guess and push to array "letters you've guessed"
@@ -80,54 +83,72 @@
 
 class WordGuess
 
-puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, you will lose a piece of pie."
-puts "You must guess the correct word before you run out of pie."
-
-
-frog1 = "    @ . . @
-    (-------)
-  (   >___<   )
-  ^^  ~   ~   ^^
-  \\\\\\\///////
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~"
-
-frog2 = "     @ . . @
-    (-------)
-  (   >___<   )
-  ^^  ~   ~   ^^
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~"
-
-frog3 = "     @ . . @
-    (-------)
-  (   >___<   )
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~
-  ~~~~~~~~~~~~~~"
-
-frog4 = "      @ . . @
-    (-------)
+  frog1 = "    @ . . @
+      (-------)
+    (   >___<   )``
+    ^^  ~   ~   ^^
+    \\\\\\\///////
     ~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~"
+
+  frog2 = "     @ . . @
+      (-------)
+    (   >___<   )
+    ^^  ~   ~   ^^
+    ~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~"
+
+  frog3 = "     @ . . @
+      (-------)
+    (   >___<   )
     ~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~"
 
-frog5 = "     @ . . @
-~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~"
+  frog4 = "      @ . . @
+      (-------)
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~"
 
-frog6 = " "
+  frog5 = "     @ . . @
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~"
 
-frogarray = []
-frogarray.push(frog1, frog2, frog3, frog4, frog5, frog6)
+  frog6 = " "
 
-frogarray[1]
+  frogarray = []
+  frogarray.push(frog1, frog2, frog3, frog4, frog5, frog6)
+#Create an array of possible words for the player to guess. Use sample to get one word from array.
+mystery_words = %w(get red kitty nose)
+
+puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, the frog will sink into the water a little more."
+puts "You must guess the correct word before the frog is submerged."
+puts "Lets get started!"
+#Print ASCII art and mystery word.
+puts frogarray[0]
+# puts mystery_words.sample
+
+
+
+# word = mystery_words.sample
+puts "nose".split(/./)
+# puts split
+
+
+
+# words_display = []
+# words_display << mystery_words.sample.char
+# puts words_display
+
+
+
 
 end
