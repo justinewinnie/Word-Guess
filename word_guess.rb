@@ -134,8 +134,27 @@ puts "You must guess the correct word before the frog is submerged."
 puts "Lets get started!"
 #Print ASCII art and mystery word.
 puts frogarray[0]
-
+# guesses = false
+# until guesses == words_display ||
 words_display = mystery_words.sample.chars
 # print words_display
+# replace the letter in mystery word with dashes
+n = words_display.length
+dashed_word = ("-" * n).chars
+p dashed_word
+
+puts "What letter do you want to guess?"
+guessed_letter = gets.chomp
+# index where they have guessed
+#guessed_letter = []
+
+# display for each turn
+#wrong_guesses = []
+
+if guessed_letter != words_display[0..-1]
+  puts "No! #{guessed_letter} is wrong"
+  wrong_guesses.push("#{guessed_letter}")
+
+  frogarray[g +=1]
 
 end
