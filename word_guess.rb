@@ -129,46 +129,53 @@ class WordGuess
 #Create an array of possible words for the player to guess. Use sample to get one word from array.
 mystery_words = %w(get red kitty nose)
 
-puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, the frog will sink into the water a little more."
-puts "You must guess the correct word before the frog is submerged."
-puts "Lets get started!"
-#Print ASCII art and mystery word.
-puts frogarray[0]
-# guesses = false
-# until guesses == words_display ||
-words_display = mystery_words.sample.chars
-# print words_display
-# replace the letter in mystery word with dashes
-n = words_display.length
-dashed_word = ("-" * n).chars
-p dashed_word
+  puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, the frog will sink into the water a little more."
+  puts "You must guess the correct word before the frog is submerged."
+  puts "Lets get started!"
+  #Print ASCII art and mystery word.
+  puts frogarray[0]
+  # guesses = false
+  # until guesses == words_display ||
+  words_display = mystery_words.sample.chars
+  # print words_display
+  # replace the letter in mystery word with dashes
+  n = words_display.length
+  dashed_word = ("-" * n).chars
+  p dashed_word
 
-puts "What letter do you want to guess?"
-guessed_letter = gets.chomp
-# index where they have guessed
-#guessed_letter = []
+  puts "What letter do you want to guess?"
+  guessed_letter = gets.chomp
+  # index where they have guessed
+  #guessed_letter = []
 
-# display for each turn
+  # display for each turn
+  # store the wrong guess in an array.
+    wrong_guesses = []
 
-#wrong guess!!!!
-if guessed_letter != words_display[0..-1]
-  puts "No! #{guessed_letter} is wrong"
+  # print the frog starting to drown.
+  g = wrong_guesses.length
+  #wrong guess!!!!
+  while g != 5
+    if guessed_letter != words_display[0..-1]
+      puts "No! #{guessed_letter} is wrong"
 
-# store the wrong guess in an array.
-  wrong_guesses = []
-  wrong_guesses.push("#{guessed_letter}")
+    # store the wrong guess in an array.
 
-# print the frog starting to drown.
-g = wrong_guesses.length
-  puts frogarray[g]
+      wrong_guesses.push("#{guessed_letter}")
 
-    # uh oh, you lost.
-    when g == 5
+    # print the frog starting to drown.
+    g = wrong_guesses.length
+      puts frogarray[g]
+
+    elsif guessed_letter == words_display[0..-1]
+      puts "#{guessed_letter} is one!"
+      puts frogarray[g]
+      
+        # uh oh, you lost.
+      if g == 5
         puts "Sorry, you lost. The frog is totally submerged!"
         exit
+      end
     end
-end
-
-
-
+  end
 end
