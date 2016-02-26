@@ -149,12 +149,26 @@ guessed_letter = gets.chomp
 #guessed_letter = []
 
 # display for each turn
-#wrong_guesses = []
 
+#wrong guess!!!!
 if guessed_letter != words_display[0..-1]
   puts "No! #{guessed_letter} is wrong"
+
+# store the wrong guess in an array.
+  wrong_guesses = []
   wrong_guesses.push("#{guessed_letter}")
 
-  frogarray[g +=1]
+# print the frog starting to drown.
+g = wrong_guesses.length
+  puts frogarray[g]
+
+    # uh oh, you lost.
+    when g == 5
+        puts "Sorry, you lost. The frog is totally submerged!"
+        exit
+    end
+end
+
+
 
 end
