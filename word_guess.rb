@@ -134,21 +134,8 @@ puts "You must guess the correct word before the frog is submerged."
 puts "Lets get started!"
 #Print ASCII art and mystery word.
 puts frogarray[0]
-# puts mystery_words.sample
 
-
-
-# word = mystery_words.sample
-puts "nose".split(/./)
-# puts split
-
-
-
-# words_display = []
-# words_display << mystery_words.sample.char
-# puts words_display
-
-
-
+words_display = mystery_words.sample.chars
+# print words_display
 
 end
