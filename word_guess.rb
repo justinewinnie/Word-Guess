@@ -155,7 +155,7 @@ mystery_words = %w(get red kitty nose)
   # print the frog starting to drown.
   g = wrong_guesses.length
   #wrong guess!!!!
-  while g != 5
+  # while g != 5
     if guessed_letter != words_display[0..-1]
       puts "No! #{guessed_letter} is wrong"
 
@@ -164,18 +164,23 @@ mystery_words = %w(get red kitty nose)
       wrong_guesses.push("#{guessed_letter}")
 
     # print the frog starting to drown.
-    g = wrong_guesses.length
+    # g = wrong_guesses.length
       puts frogarray[g]
 
-    elsif guessed_letter == words_display[0..-1]
+    else guessed_letter == words_display[0..-1]
       puts "#{guessed_letter} is one!"
       puts frogarray[g]
-      
+      # where is the guessed_letter in words_display
+      # replace the dash (a string) at that index with guessed_letter
+      a = words_display.index(guessed_letter)
+      puts a
+
+
         # uh oh, you lost.
-      if g == 5
-        puts "Sorry, you lost. The frog is totally submerged!"
-        exit
-      end
+    # if g == 5
+    #   puts "Sorry, you lost. The frog is totally submerged!"
+    #   exit
+    # end
     end
-  end
+  # end
 end
