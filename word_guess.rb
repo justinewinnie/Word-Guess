@@ -38,26 +38,30 @@
 # store the art in an array which will be indexed [0].....ect
 # syntax: print pie array with index[1]
 
-def froggy
+#def froggy
 
-
-     @ . . @
-    (-------)
-  (   >___<   )
-  ^^  ~   ~   ^^
-  \\\\\\\///////
-
-  @ . . @
- (-------)
-(   >___<   )
-^^  ~   ~   ^^
-\\\\\\\///////
-
-    @ . . @
-   (-------)
-  (   >___<   )
- ^^  ~   ~   ^^
- \\\\\\\///////
+# #
+#      @ . . @
+#     (-------)
+#   (   >___<   )
+#   ^^  ~   ~   ^^
+#   \\\\\\\///////
+# #
+# #   @ . . @
+#  (-------)
+# (   >___<   )
+#
+#
+#
+#
+# ^^  ~   ~   ^^
+# \\\\\\\///////
+#
+#     @ . . @
+#    (-------)
+#   (   >___<   )
+#  ^^  ~   ~   ^^
+#  \\\\\\\///////
 
 #Reprint the ASCII image, the guessed letters the status of the mystery word
 # (create a method)
@@ -78,6 +82,26 @@ class WordGuess
 puts "Welcome to Word Guess.\nYour goal is to guess the correct word.\nEach time you guess a wrong letter not in the mystery word, you will lose a piece of pie."
 puts "You must guess the correct word before you run out of pie."
 
+puts frog1 = "    @ . . @
+    (-------)
+  (   >___<   )
+  ^^  ~   ~   ^^
+  \\\\\\\///////"
 
+puts frog2 = "     @ . . @
+    (-------)
+  (   >___<   )
+  ^^  ~   ~   ^^"
+
+puts frog3 = "     @ . . @
+    (-------)
+  (   >___<   )"
+
+puts frog4 = "      @ . . @
+    (-------)"
+
+puts frog5 = "     @ . . @"
+
+puts frog6 = "   "
 
 end
