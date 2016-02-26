@@ -150,37 +150,40 @@ mystery_words = %w(get red kitty nose)
 
   # display for each turn
   # store the wrong guess in an array.
-    wrong_guesses = []
-
-  # print the frog starting to drown.
-  g = wrong_guesses.length
-  #wrong guess!!!!
-  # while g != 5
-    if guessed_letter != words_display[0..-1]
-      puts "No! #{guessed_letter} is wrong"
-
-    # store the wrong guess in an array.
-
-      wrong_guesses.push("#{guessed_letter}")
-
-    # print the frog starting to drown.
-    # g = wrong_guesses.length
-      puts frogarray[g]
-
-    else guessed_letter == words_display[0..-1]
+  while words_display != dashed_word
+    if words_display.include?(guessed_letter)
       puts "#{guessed_letter} is one!"
-      puts frogarray[g]
+      # puts frogarray[g]
       # where is the guessed_letter in words_display
       # replace the dash (a string) at that index with guessed_letter
       a = words_display.index(guessed_letter)
-      puts a
+      # puts a
+      dashed_word[a] = guessed_letter
 
+    elsif
+        wrong_guesses = []
+        g = wrong_guesses.length + 1
+
+        puts "No! #{guessed_letter} is wrong"
+        # store the wrong guess in an array.
+        wrong_guesses.push("#{guessed_letter}")
+      # print the frog starting to drown.
+      # g = wrong_guesses.length
+
+    else
+      g == 5
+        puts "Sorry, you lost. The frog is totally submerged!"
+        exit
+        puts frogarray[g]
+    end
+      print dashed_word
+      print wrong_guesses
 
         # uh oh, you lost.
-    # if g == 5
-    #   puts "Sorry, you lost. The frog is totally submerged!"
-    #   exit
+
     # end
-    end
   # end
+  end
+  # else
+  # puts "You win!"
 end
