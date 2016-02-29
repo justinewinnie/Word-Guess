@@ -198,14 +198,16 @@ mystery_words = %w(get red kitty nose)
     p "Wrong letters you have guessed so far: "
     p wrong_guesses
   end
+
+      # when you've guessed wrong 5 times, you lose.
       if wrong_guesses.length == 5
           puts "Sorry, you lost. The frog is totally submerged!"
           exit
       end
 
-        if dashed_word.include?("-") == false
-            puts "You won!"
-        end
+      # or, if there are no more dashes left, you win!
+      if dashed_word.include?("-") == false
+          puts "You won!"
+      end
 
 end
-  
