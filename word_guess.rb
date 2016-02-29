@@ -1,3 +1,5 @@
+require 'pry'
+require 'colorize'
 # Word Guess 2.25.16 Risha Allen & Justine Winnie
 
 # Determine what type of ASCII art your team would like to utilize - be creative!
@@ -83,23 +85,23 @@
 
 class WordGuess
 
-  frog1 = "    @ . . @
-      (-------)
-    (   >___<   )``
-    ^^  ~   ~   ^^
-    \\\\\\\///////
-    ~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~"
-
-  frog2 = "     @ . . @
+   frog1 = "       @ . . @
       (-------)
     (   >___<   )
     ^^  ~   ~   ^^
-    ~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~
-    ~~~~~~~~~~~~~~"
+    //////\\\\\\\///////
+    ~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~ ".colorize(:green)
 
-  frog3 = "     @ . . @
+  frog2 = "       @ . . @
+      (-------)
+    (   >___<   )
+    ^^  ~   ~   ^^
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~
+      ~~~~~~~~~~~~~~".colorize(:green)
+
+  frog3 = "       @ . . @
       (-------)
     (   >___<   )
     ~~~~~~~~~~~~~~
@@ -107,7 +109,7 @@ class WordGuess
     ~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~"
 
-  frog4 = "      @ . . @
+  frog4 = "       @ . . @
       (-------)
       ~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~
@@ -115,14 +117,19 @@ class WordGuess
       ~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~"
 
-  frog5 = "     @ . . @
+  frog5 = "       @ . . @
   ~~~~~~~~~~~~~~
   ~~~~~~~~~~~~~~
   ~~~~~~~~~~~~~~
   ~~~~~~~~~~~~~~
   ~~~~~~~~~~~~~~"
 
-  frog6 = " "
+  frog6 =  "  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~
+  ~~~~~~~~~~~~~~"
 
   frogarray = []
   frogarray.push(frog1, frog2, frog3, frog4, frog5, frog6)
@@ -136,54 +143,66 @@ mystery_words = %w(get red kitty nose)
   puts frogarray[0]
   # guesses = false
   # until guesses == words_display ||
+  # sample is a method on the array class
+  # chars is a method on the string class and returns an array of characters
   words_display = mystery_words.sample.chars
   # print words_display
   # replace the letter in mystery word with dashes
   n = words_display.length
-  dashed_word = ("-" * n).chars
+  dashed_word = ("-" * n).chars.to_a
   p dashed_word
 
-  puts "What letter do you want to guess?"
-  guessed_letter = gets.chomp
+
   # index where they have guessed
   #guessed_letter = []
-
+  wrong_guesses = []
   # display for each turn
-  # store the wrong guess in an array.
-  while words_display != dashed_word
+  # store the wrong guess in an array
+  while dashed_word.include?("-") && wrong_guesses.length < 5
+    puts "What letter do you want to guess?"
+    guessed_letter = gets.chomp
     if words_display.include?(guessed_letter)
-      puts "#{guessed_letter} is one!"
+      puts "That is correct!"
       # puts frogarray[g]
       # where is the guessed_letter in words_display
       # replace the dash (a string) at that index with guessed_letter
-      a = words_display.index(guessed_letter)
+      # ["r", "e", "d"].index("r")
+      # => 0
+      # a = words_display.index(guessed_letter)
       # puts a
-      dashed_word[a] = guessed_letter
+      # a = 0
+      # dashed_word[a] = guessed_letter
+      a = []
+      words_display.each_with_index do |val, ind| # this method will keep looping through every thing in the array until gets all
+        if val == guessed_letter # "r"
+           a.push(ind) # 0
+        end
+          a.each do |i|
+            dashed_word[i] = guessed_letter
+        end
+      end
+        # dashed_word.include?(words_display)
+      #  puts "You won!"
 
-    elsif
-        wrong_guesses = []
-        g = wrong_guesses.length + 1
-
-        puts "No! #{guessed_letter} is wrong"
-        # store the wrong guess in an array.
-        wrong_guesses.push("#{guessed_letter}")
-      # print the frog starting to drown.
-      # g = wrong_guesses.length
-
-    else
-      g == 5
-        puts "Sorry, you lost. The frog is totally submerged!"
-        exit
-        puts frogarray[g]
+      else
+          puts "No! #{guessed_letter} is wrong\n"
+      ##  if guessed_letter.include?(wrong_guesses.to_s) # this is not working
+              puts "you have already guessed this letter, please guess again."
+        # end
+          wrong_guesses.push("#{guessed_letter}")
+           # wrong_guesses.length means "how many things in the array"
+        # print the frog starting to drown.
+        # checking for
+          puts frogarray[wrong_guesses.length]
     end
-      print dashed_word
-      print wrong_guesses
-
-        # uh oh, you lost.
-
-    # end
-  # end
+      if wrong_guesses.length == 5
+          puts "Sorry, you lost. The frog is totally submerged!"
+          exit
+      end
+          p "The mystery word: "
+          p dashed_word
+          p "Letters you have guessed so far: "
+          p wrong_guesses
   end
-  # else
-  # puts "You win!"
 end
+  
