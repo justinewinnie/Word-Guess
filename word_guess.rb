@@ -182,14 +182,10 @@ mystery_words = %w(get red kitty nose)
             dashed_word[i] = guessed_letter
         end
       end
-    # end
-        # dashed_word.include?(words_display)
-      #  puts "You won!"
 
-    elsif wrong_guesses.include?(guessed_letter) && dashed_word.include?(guessed_letter) # this is not working
+    elsif wrong_guesses.include?(guessed_letter) && dashed_word.include?(guessed_letter)
       puts "You have already guessed this letter, please guess again."
           puts frogarray[wrong_guesses.length]
-        # end
     else puts "No! #{guessed_letter} is wrong\n"
           wrong_guesses.push("#{guessed_letter}")
           puts frogarray[wrong_guesses.length]
@@ -212,9 +208,4 @@ mystery_words = %w(get red kitty nose)
         end
 
 end
-        # uh oh, you lost.
-    # end
-  # end
-  # end
-  # else
-  # puts "You win!"
+  
